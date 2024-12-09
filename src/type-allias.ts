@@ -9,5 +9,5 @@ export type Product = {
     id: ID;
     name: string;
     price: number;
-    category: Category;
+    category?: Category; //terdapat optional properties '?' dimana nilai nya tidak wajib di isi , karena setiap object/allias defaultnya nilainya wajib di isi
 }
