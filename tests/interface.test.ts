@@ -1,4 +1,4 @@
-import { Seller } from "../src/interface";
+import { Seller,Multiply } from "../src/interface";
 
 describe('interface', () => {
     it('should support in typescript', () => {
@@ -13,5 +13,13 @@ describe('interface', () => {
         // seller.nib = "2323232"; //gak bisa diubah karena Readonly di properties interface
 
         console.info(seller);
+    });
+
+    it('should function interface', () => {
+        let perkalian: Multiply = (value1:number, value2:number): number =>{  //penggunaan function interface pada variable
+            return value1*value2;
+        }
+
+        expect(perkalian(3,2)).toBe(6);
     });
 });
