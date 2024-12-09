@@ -1,4 +1,4 @@
-import { Seller,Multiply } from "../src/interface";
+import { Seller,Multiply,StringArray,StringDictionary } from "../src/interface";
 
 describe('interface', () => {
     it('should support in typescript', () => {
@@ -21,5 +21,18 @@ describe('interface', () => {
         }
 
         expect(perkalian(3,2)).toBe(6);
+    });
+
+    it('should indexable interface', () => {
+        let namaku: StringArray = ["Agung", "Priyo", "Sembodo"];
+
+        expect(namaku[0]).toBe("Agung");
+
+        let book: StringDictionary = {
+            name: "Apaantuh",
+            author: "Siapa"
+        };
+
+        expect(book.name).toBe("Apaantuh");
     });
 });

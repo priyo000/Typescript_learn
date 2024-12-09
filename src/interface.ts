@@ -9,3 +9,11 @@ export interface Seller{ //interface kurleb dengan alias namun lebih banyak digu
 export interface Multiply{ // function interface bisa mempermudah membuat variable berisi function
     (value1: number, value2: number): number
 }
+
+export interface StringArray{ //array namun dalam interface
+    [index: number]: string
+}
+
+export interface StringDictionary{ //seperti object
+    [key: string]: string
+}
