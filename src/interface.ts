@@ -17,3 +17,14 @@ export interface StringArray{ //array namun dalam interface
 export interface StringDictionary{ //seperti object
     [key: string]: string
 }
+
+//Extends Interface Learn
+export interface Employee{
+    id: number,
+    name: string,
+    div?: string
+}
+// use Extends Interface
+export interface Manager extends Employee{
+    numberOfEmployee: number;
+}

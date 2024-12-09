@@ -1,4 +1,4 @@
-import { Seller,Multiply,StringArray,StringDictionary } from "../src/interface";
+import { Seller,Multiply,StringArray,StringDictionary, Employee, Manager } from "../src/interface";
 
 describe('interface', () => {
     it('should support in typescript', () => {
@@ -34,5 +34,21 @@ describe('interface', () => {
         };
 
         expect(book.name).toBe("Apaantuh");
+    });
+
+    it('should extend Interface', () => {
+        let karyawan: Employee = {
+            id:1,
+            name:"Agung",
+            div:"IT"
+        }
+
+        let manager: Manager = {
+            id: 2,
+            name: "Febri",
+            numberOfEmployee: 4
+        }
+
+        console.info(manager);
     });
 });
