@@ -1,4 +1,4 @@
-import { Seller,Multiply,StringArray,StringDictionary, Employee, Manager } from "../src/interface";
+import { Seller,Multiply,StringArray,StringDictionary, Employee, Manager, Person } from "../src/interface";
 
 describe('interface', () => {
     it('should support in typescript', () => {
@@ -41,14 +41,24 @@ describe('interface', () => {
             id:1,
             name:"Agung",
             div:"IT"
-        }
+        };
 
         let manager: Manager = {
             id: 2,
             name: "Febri",
             numberOfEmployee: 4
-        }
+        };
 
         console.info(manager);
+    });
+
+    it('should function in interface', () => {
+        let person: Person = {
+            name: "Agung",
+            sayHello(name) {
+                return `Hello ${name} aku ${this.name}`;
+            }
+        };
+        expect(person.sayHello("Priyo")).toBe("Hello Priyo aku Agung");
     });
 });
