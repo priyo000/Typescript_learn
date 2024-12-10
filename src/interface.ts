@@ -33,3 +33,7 @@ export interface Person{
     name: string;
     sayHello(name: string): string;
 }
+
+export interface Hobby{
+    hobby: string;
+}

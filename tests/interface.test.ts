@@ -1,4 +1,4 @@
-import { Seller,Multiply,StringArray,StringDictionary, Employee, Manager, Person } from "../src/interface";
+import { Seller,Multiply,StringArray,StringDictionary, Employee, Manager, Person, Hobby } from "../src/interface";
 
 describe('interface', () => {
     it('should support in typescript', () => {
@@ -55,10 +55,30 @@ describe('interface', () => {
     it('should function in interface', () => {
         let person: Person = {
             name: "Agung",
-            sayHello(name) {
+            sayHello(name: string) {
                 return `Hello ${name} aku ${this.name}`;
             }
         };
         expect(person.sayHello("Priyo")).toBe("Hello Priyo aku Agung");
+    });
+
+    it('should intersection in typescript', () => { //menggabungkan 2 interface 
+        interface NameAndArray extends Person, Hobby { //begini bisa jika ada yg ditambahkan datanya kedalam interface
+
+        }
+
+        type NameAndArray2 = Person & Hobby; //lebih baik begini jika tidak ada tambahan tipe data didalam nya menggunakan '&'
+
+        let namehobby: NameAndArray2 = {
+            name: "Agung",
+            sayHello(name:string){
+                return `Hai ${name} hoby nya ${this.hobby}`;
+            },
+            hobby: "Sepak Bola"
+        }
+
+        console.info(namehobby.sayHello("Priyo"));
+
+
     });
 });
