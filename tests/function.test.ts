@@ -60,4 +60,15 @@ describe('Learn Function Typescript', () => {
         expect(whatever("Agung")).toBe("AGUNG");
         expect(whatever(10)).toBe(100);
     });
+
+    it('should function as parameter', () => {
+        function sayHello(name:string, filter : (name:string) => string) {
+            return filter(name);
+        }
+        function Upper(name: string): string{
+            return name.toUpperCase();
+        }
+
+        expect(sayHello("Agung",Upper)).toBe("AGUNG");
+    });
 });
