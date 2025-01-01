@@ -61,14 +61,15 @@ describe('Learn Function Typescript', () => {
         expect(whatever(10)).toBe(100);
     });
 
-    it('should function as parameter', () => {
+    it('should function as parameter', () => { 
         function sayHello(name:string, filter : (name:string) => string) {
-            return filter(name);
+            return `Hello ${filter(name)}`;
         }
         function Upper(name: string): string{
             return name.toUpperCase();
         }
+        expect(sayHello("Agung",Upper)).toBe("Hello AGUNG");
 
-        expect(sayHello("Agung",Upper)).toBe("AGUNG");
+        expect(sayHello("Agung", (name: string): string => name.toUpperCase())).toBe("Hello AGUNG"); //bisa juga function nya ditulis langsung tanpa membuat function baru lagi diluar (disebut anonymus function)
     });
 });
