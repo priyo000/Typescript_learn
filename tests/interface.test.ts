@@ -64,7 +64,7 @@ describe('interface', () => {
 
     it('should intersection in typescript', () => { //menggabungkan 2 interface 
         interface NameAndArray extends Person, Hobby { //begini bisa jika ada yg ditambahkan datanya kedalam interface
-
+            yournumber:number;
         }
 
         type NameAndArray2 = Person & Hobby; //lebih baik begini jika tidak ada tambahan tipe data didalam nya menggunakan '&'
@@ -80,5 +80,15 @@ describe('interface', () => {
         console.info(namehobby.sayHello("Priyo"));
 
 
+    });
+    it('should assertion in Typescript', () => {
+        const person : any = {
+            name: "Agung",
+            age: 21
+        };
+
+        const person2: Person = person as Person;
+
+        console.info(person2.name);
     });
 });
