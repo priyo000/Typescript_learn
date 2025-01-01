@@ -1,0 +1,49 @@
+
+describe('Learn Function Typescript', () => {
+    it('should function w/ return and w/o return (void)', () => {
+        function sayHello(name:string) : string {
+            return `Hello ${name}`;
+        }
+
+        expect(sayHello("Agung")).toBe("Hello Agung");
+
+        function printHello(name:string) : void { //void jika tanpa return
+            console.info(`Hai ${name}`);
+        }
+
+        printHello("Febri");
+    });
+
+    it('should function w/ Default Value', () => {
+        function sayHello(name: string = 'Guest'): string{  //memberikan Default Value
+            return `Hallo Mas ${name}`;
+        }
+        expect(sayHello()).toBe("Hallo Mas Guest");
+        expect(sayHello("Agung")).toBe("Hallo Mas Agung");
+    });
+
+    it('should function w/ rest parameter', () => { // dengan array parameter
+        function sum(...values:number[]) : number{
+            let total : number = 0;
+            for (const value of values) {
+                total += value;
+            }
+            return total;
+        }
+        expect(sum(1,2,3,4)).toBe(10);
+    });
+
+    it('function w/ optional parameter', () => {
+        function sayHello(firstname:string, lastname?:string) : string { // pake '?' utk buat optional parameter
+            if (lastname) {
+                return `Hello ${firstname} ${lastname}`;
+            }else{
+                return `Hello ${firstname}`;
+            }
+        }
+
+        expect(sayHello("Agung")).toBe("Hello Agung");
+        expect(sayHello("Agung","Priyo")).toBe("Hello Agung Priyo");
+
+    });
+});
