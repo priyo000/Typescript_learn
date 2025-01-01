@@ -44,6 +44,20 @@ describe('Learn Function Typescript', () => {
 
         expect(sayHello("Agung")).toBe("Hello Agung");
         expect(sayHello("Agung","Priyo")).toBe("Hello Agung Priyo");
+    });
 
+    it('should function overloading', () => {  // jika 1 Function dengan parameter dan return bermacam-macam
+        function whatever(value: string) : string;
+        function whatever(value: number) : number;
+        function whatever(value:any) : any {
+            if (typeof value === "string") {
+                return value.toUpperCase();
+            } else if (typeof value === "number") {
+                return value * 10;
+            }
+        }
+
+        expect(whatever("Agung")).toBe("AGUNG");
+        expect(whatever(10)).toBe(100);
     });
 });
